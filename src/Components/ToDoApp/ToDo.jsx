@@ -18,10 +18,17 @@ const ToDo=()=>{
   }
 
   function handleToDoUpdate(id,type){
-    switch(type){
-      case 'checked':
-      default:return;
-    }
+    const updatedTodo=todoList.map((item)=>{
+      switch(type){
+        case "checked":
+          if(item.id===id){
+          return {...item,checked:!item.checked}
+        }
+        break;
+        default:return item;break;
+      }
+    });
+    setTodoList(updatedTodo);
   }
 
   return(
@@ -31,10 +38,10 @@ const ToDo=()=>{
       <h3>List of All ToDo</h3>
       <ul>
         {todoList.map((item)=>
-        <li key={item.id}>
-          <input type="checkbox" checked={item.checked} onChange={()=>handleToDoUpdate(item.id,"checked")}/>
-          {item.todo}
-          <button onClick={()=>handleToDoDelete(item.id)}>Delete</button>
+        <li key={item?.id}>
+          <input type="checkbox" checked={item?.checked} onChange={()=>handleToDoUpdate(item?.id,"checked")}/>
+          {item?.todo}
+          <button onClick={()=>handleToDoDelete(item?.id)}>Delete</button>
         </li>)}
       </ul>
     </>
