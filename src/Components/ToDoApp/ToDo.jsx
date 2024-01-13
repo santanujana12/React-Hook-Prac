@@ -25,10 +25,11 @@ const ToDo=()=>{
           return {...item,checked:!item.checked}
         }
         break;
-        default:return item;break;
+        default:return item;
       }
     });
     setTodoList(updatedTodo);
+    console.log()
   }
 
   return(
