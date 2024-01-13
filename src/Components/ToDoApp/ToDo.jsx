@@ -19,17 +19,12 @@ const ToDo=()=>{
 
   function handleToDoUpdate(id,type){
     const updatedTodo=todoList.map((item)=>{
-      switch(type){
-        case "checked":
-          if(item.id===id){
-          return {...item,checked:!item.checked}
-        }
-        break;
-        default:return item;
+      if(type==="checked" && item.id===id){
+        return {...item,checked:!item.checked}
       }
+      return item;
     });
     setTodoList(updatedTodo);
-    console.log()
   }
 
   return(
