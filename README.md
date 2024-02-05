@@ -1,4 +1,4 @@
-# React-Hook-Prac
+# React Components For Practice
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-lhbxtn)
 
