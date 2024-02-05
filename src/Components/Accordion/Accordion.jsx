@@ -4,16 +4,28 @@ import React,{useState} from "react";
 import data from "../../MockData/data";
 
 const Accordion = ()=>{
-  const [index,setIndex] = useState(0);
+  const [dataIndex,setDataIndex] = useState(null);
+
+  function handleToggling(index){
+    if(index===dataIndex){
+      setDataIndex(null);
+    }else if(index!==dataIndex){
+      setDataIndex(index);
+    }
+  }
+
 
   return (
     <>
-      {data.map(item=>{
+    {console.log(data.length)}
+      {data.map((item,index)=>{
         return (
-          <>
-            <h1>{item.title}</h1>
-            <p>{item.values}</p>
-          </>
+          <div style={{width:"95%"}}>
+            <h1  className="d-flex flex-row justify-content-between">{item.title}
+              <button onClick={()=>handleToggling(index)}>{dataIndex===index?"-":"+"}</button>
+            </h1>
+            {dataIndex===index&&<p>{item.values}</p>}
+          </div>
         )
       })}
     </>
