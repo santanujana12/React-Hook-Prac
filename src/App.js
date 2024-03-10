@@ -6,6 +6,7 @@ import ToDo from "./Components/ToDoApp/ToDo";
 import TogglingDiv from "./Components/PlayingDivs/ToggleDivs";
 import Accordion from "./Components/Accordion/Accordion";
 import CarouselComponent from "./Components/Carousel/CarouselComponent";
+import Accordion1 from "./Components/Accordion/Accordion1";
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       {/* <TogglingDiv/>
        */}
        {/* <Accordion/> */}
-       <CarouselComponent/>
+       <Accordion1/>
+       {/* <CarouselComponent/> */}
     </div>
   );
 }

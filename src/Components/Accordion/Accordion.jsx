@@ -17,7 +17,7 @@ const Accordion = ()=>{
 
   return (
     <>
-    {console.log(data.length)}
+    {/* {console.log(data.length)} */}
       {data.map((item,index)=>{
         return (
           <div style={{width:"95%"}}>
