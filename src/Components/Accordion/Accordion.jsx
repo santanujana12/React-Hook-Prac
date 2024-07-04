@@ -4,7 +4,7 @@ import React,{useState} from "react";
 import data from "../../MockData/data";
 
 const Accordion = ()=>{
-  const [dataIndex,setDataIndex] = useState(null);
+  const [dataIndex, setDataIndex] = useState(null);
 
   function handleToggling(index){
     if(index===dataIndex){
@@ -13,7 +13,6 @@ const Accordion = ()=>{
       setDataIndex(index);
     }
   }
-
 
   return (
     <>
