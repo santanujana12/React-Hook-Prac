@@ -7,8 +7,9 @@ const PaginationController = () => {
   const [page, setPage] = useState(0);
 
   async function fetchData() {
-    const data = await fetch("https://jsonplaceholder.typicode.com/photos");
+    const data = await fetch("https://dummyjson.com/products/search?q=phone");
     const jsondata = await data.json();
+    console.log(jsondata?.products?.length);
     setPageData(jsondata);
   }
 
@@ -21,8 +22,8 @@ const PaginationController = () => {
       <h1 className="text-center fw-bold">Pagination</h1>
       <div className="d-flex flex-wrap">
         {pageData &&
-          pageData
-            .slice(page * 10, page * 10 + 10)
+          pageData?.products
+            ?.slice(page * 10, page * 10 + 10)
             .map((item) => <Pagination key={item?.id} pageData={item} />)}
       </div>
       <div className="d-flex justify-content-between">
@@ -30,7 +31,7 @@ const PaginationController = () => {
           type="button"
           className="btn btn-primary mx-2"
           onClick={() => {
-            setPage(page>0?page - 1:null);
+            setPage(page > 0 ? page - 1 : null);
           }}
         >
           Previous
