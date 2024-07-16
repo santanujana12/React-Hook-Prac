@@ -1,8 +1,17 @@
-import React,{useState,useEffect,useRef} from "react";
+import React, { useState, useEffect, useRef } from 'react';
 
 const Combobox = () => {
   const options = [
-    'Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew'
+    'Apple',
+    'Banana',
+    'Cherry',
+    'Date',
+    'Elderberry',
+    'Fig',
+    'Grape',
+    'Honeydew',
+    '9',
+    '8',
   ];
 
   const [inputValue, setInputValue] = useState('');
@@ -13,6 +22,7 @@ const Combobox = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (inputRef.current && !inputRef.current.contains(event.target)) {
+        console.log(event.target);
         setShowOptions(false);
       }
     };
@@ -27,7 +37,7 @@ const Combobox = () => {
   const handleInputChange = (event) => {
     const value = event.target.value;
     setInputValue(value);
-    const filtered = options.filter(option =>
+    const filtered = options.filter((option) =>
       option.toLowerCase().includes(value.toLowerCase())
     );
     setFilteredOptions(filtered);
@@ -49,7 +59,10 @@ const Combobox = () => {
         placeholder="Select an option..."
       />
       {showOptions && (
-        <div id="combobox-list" className="absolute w-full bg-white border rounded mt-1">
+        <div
+          id="combobox-list"
+          className="absolute w-full bg-white border rounded mt-1 h-8 overflow-scroll"
+        >
           {filteredOptions.map((option, index) => (
             <div
               key={index}
