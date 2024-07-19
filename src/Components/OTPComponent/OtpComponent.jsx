@@ -9,6 +9,7 @@ const OtpComponent = ({ numberOfElements,otpInput,setOtpInput }) => {
    * the next input box if the current box is filled.
    */
   const handleOtpInput = (e, index) => {
+    if(isNaN(e.target.value)) return;
     const newOtpInput = [...otpInput];
     newOtpInput[index] = e.target.value;
     setOtpInput(newOtpInput);
