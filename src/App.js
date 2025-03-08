@@ -11,6 +11,7 @@ import PaginationController from "./Components/Pagination/PaginationController";
 import OtpComponent from "./Components/OTPComponent/OtpComponent";
 import ToDo from "./Components/ToDoApp/ToDo";
 import TogglingDiv from "./Components/PlayingDivs/ToggleDivs";
+import { ProgressBar } from "./Components/ProgressBar/ProgressBar";
 
 // Local Data imports
 import { folderStructureData } from "./MockData/folderStructureData";
@@ -35,6 +36,7 @@ export default function App() {
         otpInput={otpInput}
         setOtpInput={setOtpInput}
       />
+      <ProgressBar/>
     </div>
   );
 }

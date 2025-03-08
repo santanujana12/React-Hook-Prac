@@ -1,0 +1,9 @@
+.main_bar{
+    width:80%;
+    padding:5px;
+    margin:5px;
+    height:20px;
+    border:solid;
+    border-color:black;
+    position: relative;
+}
